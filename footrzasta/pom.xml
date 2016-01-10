@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>pl.kobietydokodu</groupId>
+    <artifactId>footrzasta</artifactId>
+    <version>0.1</version>
+    <packaging>pom</packaging>
+    <name>Footrzasta - gra w Javie z użyciem LWJGL</name>
+    <description>Footrzasta to mini gra platformowa napisana w Javie z użyciem bibliotek LWJGL oraz Spring</description>
+    <url>http://kobietydokodu.pl/kategoria/footrzasta/</url>
+    <organization>
+        <name>Blog kobietydokodu.pl</name>
+        <url>http://kobietydokodu.pl</url>
+    </organization>
+    <scm>
+        <url>https://github.com/kobietydokodupl/footrzasta</url>
+    </scm>
+    <modules>
+        <module>game-model</module>
+        <module>game-persistence</module>
+        <module>game-resources</module>
+        <module>game-runtime</module>
+        <module>game-views</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>2.0.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
