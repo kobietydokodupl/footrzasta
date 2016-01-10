@@ -15,6 +15,10 @@
     <scm>
         <url>https://github.com/kobietydokodupl/footrzasta</url>
     </scm>
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
     <modules>
         <module>game-model</module>
         <module>game-persistence</module>
