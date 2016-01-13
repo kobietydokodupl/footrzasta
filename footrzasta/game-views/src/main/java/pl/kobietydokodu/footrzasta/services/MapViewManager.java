@@ -3,12 +3,14 @@ package pl.kobietydokodu.footrzasta.services;
 import java.util.Collections;
 import java.util.Map;
 
+import org.lwjgl.input.Keyboard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
 import pl.kobietydokodu.footrzasta.model.View;
+import pl.kobietydokodu.footrzasta.model.enums.KeyboardKey;
 import pl.kobietydokodu.footrzasta.model.services.ViewManager;
 
 /**
@@ -47,7 +49,11 @@ public class MapViewManager implements ViewManager {
     }
 
     public void loop() {
-        // TODO Obsługa klawiatury, przekazywanie naciśniętych klawiszy
+        while (Keyboard.next()) {
+            if (!Keyboard.getEventKeyState()) { //reagujemy tylko na zwolnienie klawisza
+                currentView.handleKey(KeyboardKey.findByCode(Keyboard.getEventKey()));
+            }
+        }
         currentView.renderFrame();
     }
 
