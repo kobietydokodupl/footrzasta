@@ -1,5 +1,7 @@
 package pl.kobietydokodu.footrzasta.views;
 
+import java.awt.Color;
+
 import org.lwjgl.opengl.GL11;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +11,9 @@ import org.springframework.stereotype.Component;
 
 import pl.kobietydokodu.footrzasta.model.View;
 import pl.kobietydokodu.footrzasta.model.enums.KeyboardKey;
+import pl.kobietydokodu.footrzasta.model.enums.TextAlignment;
 import pl.kobietydokodu.footrzasta.model.services.GameManager;
+import pl.kobietydokodu.footrzasta.model.services.TextService;
 import pl.kobietydokodu.footrzasta.model.services.ViewManager;
 
 /**
@@ -26,6 +30,9 @@ public class MainMenu implements View {
     
     @Autowired
     private ViewManager viewManager;
+    
+    @Autowired
+    private TextService textService;
 
     @Override
     public void renderFrame() {
@@ -36,6 +43,7 @@ public class MainMenu implements View {
         GL11.glVertex2f(100 + 200, 100 + 200);
         GL11.glVertex2f(100, 100 + 200);
         GL11.glEnd();
+        textService.renderText("Menu", 50.0f, 50.0f, TextAlignment.LEFT, "Lato-Regular", Color.RED);
     }
 
     @Override
