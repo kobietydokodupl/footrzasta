@@ -11,7 +11,9 @@ public enum KeyboardKey {
 
     KEY_UNKNOWN(-1),
     KEY_ESCAPE(1), 
-    KEY_ENTER(28);
+    KEY_ENTER(28),
+    KEY_UP(200),
+    KEY_DOWN(208);
     
     /**
      * Pole do przechowywania wartości liczbowej danego klawisza.

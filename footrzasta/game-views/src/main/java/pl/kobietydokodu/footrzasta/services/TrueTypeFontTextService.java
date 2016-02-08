@@ -36,6 +36,7 @@ public class TrueTypeFontTextService implements TextService {
     }
 
     @Override
+    @SuppressWarnings("incomplete-switch")
     public void renderText(String content, Float positionX, Float positionY, TextAlignment alignment, String fontName,
             Color color) {
         TrueTypeFont font = getFont(fontName);
